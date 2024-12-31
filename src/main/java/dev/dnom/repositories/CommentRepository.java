@@ -1,4 +1,7 @@
 package dev.dnom.repositories;
 
-public interface CommentRepository {
+import dev.dnom.domain.entities.CommentEntity;
+import org.springframework.data.repository.CrudRepository;
+
+public interface CommentRepository extends CrudRepository<CommentEntity, Long> {
 }
