@@ -12,5 +12,7 @@ public record PostDto(
         Category category,
         LocalDateTime dateCreated,
         LocalDateTime dateUpdated
+
+
 ) {
 }
