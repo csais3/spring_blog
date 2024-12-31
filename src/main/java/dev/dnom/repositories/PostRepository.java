@@ -1,4 +1,7 @@
 package dev.dnom.repositories;
 
-public interface PostRepository {
+import dev.dnom.domain.entities.PostEntity;
+import org.springframework.data.repository.CrudRepository;
+
+public interface PostRepository extends CrudRepository<PostEntity, Long> {
 }
