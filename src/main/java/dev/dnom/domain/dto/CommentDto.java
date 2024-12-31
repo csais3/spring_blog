@@ -1,4 +1,10 @@
 package dev.dnom.domain.dto;
 
-public class CommentDto {
-}
+import dev.dnom.domain.entities.PostEntity;
+
+public record CommentDto(
+        Long id,
+        String content,
+        PostEntity postId
+
+) { }
