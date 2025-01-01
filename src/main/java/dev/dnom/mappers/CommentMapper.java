@@ -9,7 +9,6 @@ import org.mapstruct.factory.Mappers;
 public interface CommentMapper {
 
     CommentMapper  mapper = Mappers.getMapper(CommentMapper.class);
-
     CommentDto toCommentDto(CommentEntity entity);
     CommentEntity toCommentEntity(CommentDto commentDto);
 }
