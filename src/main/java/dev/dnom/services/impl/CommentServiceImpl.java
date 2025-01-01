@@ -7,6 +7,9 @@ import dev.dnom.repositories.CommentRepository;
 import dev.dnom.services.CommentService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class CommentServiceImpl implements CommentService {
 
@@ -23,5 +26,12 @@ public class CommentServiceImpl implements CommentService {
         CommentEntity entity = commentMapper.toCommentEntity(comment);
         CommentEntity savedEntity = commentRepository.save(entity);
         return commentMapper.toCommentDto(savedEntity);
+    }
+
+    @Override
+    public List<CommentDto> findAllComments() {
+        return commentRepository.findAll().stream()
+                .map(commentMapper::toCommentDto)
+                .collect(Collectors.toList());
     }
 }

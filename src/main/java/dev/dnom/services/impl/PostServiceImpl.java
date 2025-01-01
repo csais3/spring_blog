@@ -7,6 +7,9 @@ import dev.dnom.repositories.PostRepository;
 import dev.dnom.services.PostService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class PostServiceImpl implements PostService{
 
@@ -24,6 +27,13 @@ public class PostServiceImpl implements PostService{
         PostEntity savedPostEntity = postRepository.save(entity);
         return postMapper.toPostDto(savedPostEntity);
 
+    }
+
+    @Override
+    public List<PostDto> getAllPosts() {
+        return postRepository.findAll().stream()
+                .map(postMapper::toPostDto)
+                .collect(Collectors.toList());
     }
 
 }
