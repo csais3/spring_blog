@@ -5,7 +5,7 @@ import dev.dnom.domain.entities.CommentEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface CommentMapper {
 
     CommentMapper  mapper = Mappers.getMapper(CommentMapper.class);

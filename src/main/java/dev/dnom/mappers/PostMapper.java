@@ -5,7 +5,7 @@ import dev.dnom.domain.entities.PostEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface PostMapper {
 
     PostMapper mapper = Mappers.getMapper(PostMapper.class);
